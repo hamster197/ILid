@@ -25,7 +25,7 @@ SECRET_KEY = 'f&bfu5l2cz$c-i7(c-hlp5$qi7@(53fny87zy+9yv5n4fci_ma'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://zhem.pythonanywhere.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['zhem.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
