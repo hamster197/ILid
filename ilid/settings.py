@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.vk.VKOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -124,6 +125,9 @@ USE_TZ = True
 
 SOCIAL_AUTH_VK_OAUTH2_KEY = '7137011'
 SOCIAL_AUTH_VK_OAUTH2_SECRET = 'er04cA6bNWVzQ4FfFVEF'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '339683604356-09pm7l81g348hbe7c22rs1fvet6dkmob.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'qQxJpkkJT8RPFLPeVc0FAy8W'
+
 LOGIN_REDIRECT_URL = '/detail/'
 
 # Static files (CSS, JavaScript, Images)
