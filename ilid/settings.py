@@ -25,7 +25,7 @@ SECRET_KEY = 'f&bfu5l2cz$c-i7(c-hlp5$qi7@(53fny87zy+9yv5n4fci_ma'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://zhem.pythonanywhere.com/', '127.0.0.1']
 
 
 # Application definition
@@ -122,8 +122,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-SOCIAL_AUTH_VK_OAUTH2_KEY = 'ID приложения'
-SOCIAL_AUTH_VK_OAUTH2_SECRET = 'Защищённый ключ'
+SOCIAL_AUTH_VK_OAUTH2_KEY = '7137011'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = 'er04cA6bNWVzQ4FfFVEF'
 LOGIN_REDIRECT_URL = '/detail/'
 
 # Static files (CSS, JavaScript, Images)
