@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.vk.VKOAuth2',
     'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -127,6 +128,9 @@ SOCIAL_AUTH_VK_OAUTH2_KEY = '7137011'
 SOCIAL_AUTH_VK_OAUTH2_SECRET = 'er04cA6bNWVzQ4FfFVEF'
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '339683604356-09pm7l81g348hbe7c22rs1fvet6dkmob.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'qQxJpkkJT8RPFLPeVc0FAy8W'
+SOCIAL_AUTH_FACEBOOK_KEY = '1374146849403413'
+SOCIAL_AUTH_FACEBOOK_SECRET = '37cad31676fe5efb1eaebb24b1d5d18d'
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
 LOGIN_REDIRECT_URL = '/detail/'
 
