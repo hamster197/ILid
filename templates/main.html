@@ -1,138 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <title>Test app for Интернет Лид</title>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!--===============================================================================================-->
-      <link rel="stylesheet" type="text/css"
-         href="https://colorlib.com/etc/lf/Login_v11/vendor/bootstrap/css/bootstrap.min.css">
-      <!--===============================================================================================-->
-      <link rel="stylesheet" type="text/css"
-         href="https://colorlib.com/etc/lf/Login_v11/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-      <!--===============================================================================================-->
-      <link rel="stylesheet" type="text/css"
-         href="https://colorlib.com/etc/lf/Login_v11/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-      <!--===============================================================================================-->
-      <link rel="stylesheet" type="text/css"
-         href="https://colorlib.com/etc/lf/Login_v11/vendor/animate/animate.css">
-      <!--===============================================================================================-->
-      <link rel="stylesheet" type="text/css"
-         href="https://colorlib.com/etc/lf/Login_v11/vendor/css-hamburgers/hamburgers.min.css">
-      <!--===============================================================================================-->
-      <link rel="stylesheet" type="text/css"
-         href="https://colorlib.com/etc/lf/Login_v11/vendor/select2/select2.min.css">
-      <!--===============================================================================================-->
-      <link rel="stylesheet" type="text/css"
-         href="https://colorlib.com/etc/lf/Login_v11/css/util.css">
-      <link rel="stylesheet" type="text/css"
-         href="https://colorlib.com/etc/lf/Login_v11/css/main.css">
-      <!--===============================================================================================-->
-   </head>
-   <body>
-      <div class="limiter">
-      <div class="container-login100">
-         <div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
-            <form method="post" class="post-form">
-               <span class="login100-form-title p-b-55">
-               {% if not tpr == 'Login'  %}
-               Sign up with
-               {% else %}
-               Login
-               {% endif %}
-               </span>
-               {% if not tpr == 'Login'  %}
-               <div class="text-center w-full  p-b-42">
-                  <div class="container">
-                     <div class="row">
-                        <div class="col-sm">
-                           <a href="{% url 'social:begin' 'facebook' %}" >
-                           <i class="fa fa-facebook-official"></i>
-                           Facebook
-                           </a>
-                        </div>
-                        <div class="col-sm">
-                           <a href="{% url 'social:begin' 'google-oauth2' %}" >
-                           <i class="fa fa-google-plus"></i>
-                           Google
-                           </a>
-                        </div>
-                        <div class="col-sm">
-                           <a href="/login/vk-oauth2" >
-                           <i class="fa fa-vk"></i>
-                           VK
-                           </a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="text-center w-full  p-b-22">
-                  <span class="txt1">
-                  Or
-                  </span>
-               </div>
-               {% csrf_token %}
-               {{ rForm.as_p }}
-               <div class="container">
-                  <div class="row justify-content-md-center">
-                     <div class="col col-lg-2">
-                        {{ sForm.as_p }}
-                     </div>
-                     <div class="col-md-auto">
-                        <span class="txt1">Согласен на подписку</span>
-                     </div>
-                  </div>
-               </div>
-               <div class=" w-full  p-b-22">
-                  <span class="txt1">
-                  Предлагаем вам ознакомиться с <a class="txt1 bo1 hov1" href="#">политикой конфиденциальности.</a>
-                  </span>
-               </div>
-               {% else %}
-               {% csrf_token %}
-               {{ lForm.as_p }}
-               <div class="container-login100-form-btn p-t-25">
-                  <button class="login100-form-btn" name="lg" type="submit" >
-                  Login
-                  </button>
-               </div>
-               {% endif %}
-               {% if not tpr == 'Login' %}
-               <div class="container-login100-form-btn p-t-25">
-                  <button class="login100-form-btn" name="rg" type="submit"  >
-                  Register
-                  </button>
-               </div>
-               <div class="text-center w-full p-t-42 p-b-22">
-                  <div class="container">
-                     <div class="row">
-                        <div class="col-sm">
-                           <span class="txt1">
-                           Allready accaunt?
-                           </span>
-                        </div>
-                        <div class="col-sm">
-                           <span class="txt1">
-                           <a href=" {% url 'l_auth:login' %} " >
-                           <button type="button" class="btn btn-outline-primary" >Log in</button>
-                           </a>
-                           </span>
-                        </div>
-                     </div>
-                  </div>
-                  {% endif %}
-            </form>
+{% extends 'include.html' %}
+{% block content %}
+<form method="post" class="post-form">
+   <span class="login100-form-title p-b-55">
+   {% if not tpr == 'Login'  %}
+   Sign up with
+   {% else %}
+   Login
+   {% endif %}
+   </span>
+   {% if not tpr == 'Login'  %}
+   <div class="text-center w-full  p-b-42">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm">
+               <a href="{% url 'social:begin' 'facebook' %}" >
+               <i class="fa fa-facebook-official"></i>
+               Facebook
+               </a>
+            </div>
+            <div class="col-sm">
+               <a href="{% url 'social:begin' 'google-oauth2' %}" >
+               <i class="fa fa-google-plus"></i>
+               Google
+               </a>
+            </div>
+            <div class="col-sm">
+               <a href="/login/vk-oauth2" >
+               <i class="fa fa-vk"></i>
+               VK
+               </a>
             </div>
          </div>
       </div>
-      <!--===============================================================================================-->
-      <script src="https://colorlib.com/etc/lf/Login_v11/vendor/jquery/jquery-3.2.1.min.js"></script>
-      <!--===============================================================================================-->
-      <script src="https://colorlib.com/etc/lf/Login_v11/vendor/bootstrap/js/popper.js"></script>
-      <script src="https://colorlib.com/etc/lf/Login_v11/vendor/bootstrap/js/bootstrap.min.js"></script>
-      <!--===============================================================================================-->
-      <script src="https://colorlib.com/etc/lf/Login_v11/vendor/select2/select2.min.js"></script>
-      <!--===============================================================================================-->
-      <script src="https://colorlib.com/etc/lf/Login_v11/js/main.js"></script>
-   </body>
-</html>
+   </div>
+   <div class="text-center w-full  p-b-22">
+      <span class="txt1">
+      Or
+      </span>
+   </div>
+   {% csrf_token %}
+   {{ rForm.as_p }}
+   <div class="container">
+      <div class="row justify-content-md-center">
+         <div class="col col-lg-2">
+            {{ sForm.as_p }}
+         </div>
+         <div class="col-md-auto">
+            <span class="txt1">Согласен на подписку</span>
+         </div>
+      </div>
+   </div>
+   <div class=" w-full  p-b-22">
+      <span class="txt1">
+      Предлагаем вам ознакомиться с <a class="txt1 bo1 hov1" href="#">политикой конфиденциальности.</a>
+      </span>
+   </div>
+   {% else %}
+   {% csrf_token %}
+   {{ lForm.as_p }}
+   <div class="container-login100-form-btn p-t-25">
+      <button class="login100-form-btn" name="lg" type="submit" >
+      Login
+      </button>
+   </div>
+   {% endif %}
+   {% if not tpr == 'Login' %}
+   <div class="container-login100-form-btn p-t-25">
+      <button class="login100-form-btn" name="rg" type="submit"  >
+      Register
+      </button>
+   </div>
+   <div class="text-center w-full p-t-42 p-b-22">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm">
+               <span class="txt1">
+               Allready accaunt?
+               </span>
+            </div>
+            <div class="col-sm">
+               <span class="txt1">
+               <a href=" {% url 'l_auth:login' %} " >
+               <button type="button" class="btn btn-outline-primary" >Log in</button>
+               </a>
+               </span>
+            </div>
+         </div>
+      </div>
+      {% endif %}
+</form>
+</div>
+{% endblock %}
