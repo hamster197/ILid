@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'f&bfu5l2cz$c-i7(c-hlp5$qi7@(53fny87zy+9yv5n4fci_ma'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['zhem.pythonanywhere.com', '127.0.0.1']
 
@@ -116,7 +116,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
+SESSION_COOKIE_AGE = 17680
 
 USE_I18N = True
 
@@ -131,6 +132,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'qQxJpkkJT8RPFLPeVc0FAy8W'
 SOCIAL_AUTH_FACEBOOK_KEY = '1374146849403413'
 SOCIAL_AUTH_FACEBOOK_SECRET = '37cad31676fe5efb1eaebb24b1d5d18d'
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 
 LOGIN_REDIRECT_URL = '/detail/'
 

@@ -32,6 +32,9 @@ def MainView(request):
             send_ok = UsrSendAnswer(usr=usr, answr=sansw)
             send_ok.save()
             return redirect('l_auth:detail')
+        else:
+            return render(request, 'main.html', {'rForm': rForm, 'sForm': sForm})
+
     rForm = RegisterForm()
     sForm = SendMailForm()
     return render(request, 'main.html', {'rForm':rForm, 'sForm':sForm})

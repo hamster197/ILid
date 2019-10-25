@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+handler404 = 'ilid.views.v404_view'
+handler500 = 'ilid.views.v404_view'
+
+app_name='ilid'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('social_django.urls')),

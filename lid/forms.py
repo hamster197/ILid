@@ -31,11 +31,24 @@ class RegisterForm(forms.Form):
     cpassw = forms.CharField(max_length=10, widget=forms.PasswordInput(attrs={'class':'input100', 'type':'password',
                                 'name':'pass', 'placeholder':'ReEnter Password'}), label='Congim password', required=True)
 
-    def clean(self):
-        if self.cleaned_data.get('passw') != self.cleaned_data.get('cpassw'):
-            raise forms.ValidationError('Пароли должны совпадать!')
-        return self.cleaned_data
 
+    def clean(self):
+        super(RegisterForm, self).clean()
+        password = self.cleaned_data.get('passw')
+        re_password = self.cleaned_data.get('cpassw')
+        if not password == re_password:
+            self.add_error('passw', 'Пароли не совпадают!')
+        has_no = set(password).isdisjoint
+        if (len(password) < 8
+                or has_no(string.digits)
+                or has_no(string.ascii_lowercase)
+                or has_no(string.ascii_uppercase)):
+                self.add_error('passw', 'Пароль должнен содержать цифры, прописные и строчные буквы(8 символов)!')
+
+        username = self.cleaned_data['usern']
+        if User.objects.filter(username=username).exists():
+            raise ValidationError("Логин уже зарегестрирован в системе!")
+        return username
 
 
 
