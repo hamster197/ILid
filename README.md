@@ -1,4 +1,4 @@
-# ILid - test app for user authorization via Fasebook, VK, Google+
+# ILid - test app for user authorization via Facebook, VK, Google+
 # Installation
  pip install -r requirements.txt
 # demo
